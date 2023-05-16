@@ -36,6 +36,4 @@ const fetchRssFeed = async (url) => {
         return [];
     }
 };
-
-
 export { fetchRssFeed };
