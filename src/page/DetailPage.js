@@ -8,13 +8,17 @@ const DetailPage = () => {
         title: '',
         sapo: '',
         body: '',
+        tag: '',
+        more: '',
     });
 
     useEffect(() => {
         getRssFeedDetail('https://tienphong.vn/buoc-qua-noi-so-tao-dot-pha-kinh-te-tinh-6-dam-5-that-phat-trien-toan-dien-post1534626.tpo', (result) => {
-            console.log(result.title); // In ra tiêu đề
-            console.log(result.sapo); // In ra mô tả
-            console.log(result.body); // In ra nội dung
+            // console.log(result.title); // In ra tiêu đề
+            // console.log(result.sapo); // In ra mô tả
+            // console.log(result.body); // In ra nội dung
+            // console.log(result.tag);
+            console.log(result.more);
             const text = result;
             // console.log(content);
             // lỗi khong set trực tiếp giá trị cho content mà phải tạo cái mới set lại
@@ -23,6 +27,8 @@ const DetailPage = () => {
                 title: text.title,
                 sapo: text.sapo,
                 body: text.body,
+                tag: text.tag,
+                more: text.more,
             });
 
             return result;
@@ -32,9 +38,11 @@ const DetailPage = () => {
         <div>
             <Header></Header>
             <Navigation></Navigation>
-            <div>{content.title}</div>
-            <div dangerouslySetInnerHTML={{ __html: content.body }}></div>
-            
+            {/*<div>{content.title}</div>*/}
+            {/*<div>{content.sapo}</div>*/}
+            {/*<div dangerouslySetInnerHTML={{ __html: content.body }}></div>*/}
+            {/*<div dangerouslySetInnerHTML={{ __html: content.tag }}></div>*/}
+            <div dangerouslySetInnerHTML={{ __html: content.more }}></div>
         </div>
     );
 };
