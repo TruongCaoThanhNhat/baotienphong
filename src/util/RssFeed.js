@@ -36,4 +36,23 @@ const fetchRssFeed = async (url) => {
         return [];
     }
 };
-export { fetchRssFeed };
+const getRssFeedDetail = async (url, callback) => {
+    try {
+        const response = await axios.get(url);
+        const html = response.data;
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const title = doc.querySelector('title').innerText;
+        const sapo = doc.querySelector('div.article__sapo').textContent;
+        const body = doc.querySelector('div.article__body').innerHTML;
+        const tag = doc.querySelector('div.article__tag').innerHTML;
+        const more = doc.querySelector('div.more-story-3').innerHTML;
+        callback({ title, sapo, body, tag, more });
+    } catch (error) {
+        console.log('Lỗi: ' + error);
+    }
+};
+
+
+export { fetchRssFeed, getRssFeedDetail };
