@@ -1,0 +1,28 @@
+@import '~mdb-ui-kit/css/mdb.min.css';
+$primary-color: #a50a02;
+$text-black: #212529;
+$white: #fff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: $text-black;
+}
+
+input {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+a {
+  color: $text-black;
+}
+
+ul {
+  list-style: none;
+}

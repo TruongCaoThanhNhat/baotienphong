@@ -1,0 +1,47 @@
+@import "../../App.scss";
+
+.navigation {
+    height: 50px;
+    width: 100%;
+    background-color: $white;
+    color: $text-black;
+    font-weight: 600;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1px 3px 3px #c9c8c8;
+
+    i {
+        cursor: pointer;
+        transition: 0.4s;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+
+    .menu {
+        height: 35px;
+        margin: unset;
+        padding: unset;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 15px;
+
+        >li {
+            padding: 12px 7px;
+            // background-color: aqua;
+            // line-height: 30px;
+
+            a {
+                transition: 0.4s;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
