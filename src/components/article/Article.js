@@ -24,7 +24,7 @@ const Article = ({ feed }) => {
             {/* <span className='description'>{description}</span> */}
 
         </div>
-        // </div>
+
     );
 };
 
