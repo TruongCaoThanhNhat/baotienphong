@@ -1,14 +1,10 @@
 import React from 'react';
 import "./article.scss";
-import { getRssFeedDetail } from '../../util/RssFeed';
-import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { addHistory } from '../../store/Action';
 
 const Article = ({ feed }) => {
     const { title, image, link, updated, description, cate } = feed;
     const article = feed;
-    console.log(article);
+    // console.log(article);
 
 
     return (
@@ -21,9 +17,10 @@ const Article = ({ feed }) => {
                 />
             </a>
             {cate}
-            <a href='' className='title'>{title}</a>
+            <a href={link} className='title'>{title}</a>
             <span className='date'>{updated}</span>
-            <button className='date'>Chi tiết</button>
+            {/* <button className='date'>Chi tiết</button> */}
+            {/* <div className='decription' dangerouslySetInnerHTML={{ __html: description }}></div> */}
             {/* <span className='description'>{description}</span> */}
 
         </div>
