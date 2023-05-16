@@ -36,6 +36,22 @@ const fetchRssFeed = async (url) => {
         return [];
     }
 };
+const getRssFeedDetail = async (url, callback) => {
+    try {
+        const response = await axios.get(url);
+        const html = response.data;
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const title = doc.querySelector('title').innerText;
+        const sapo = doc.querySelector('div.article__sapo').textContent;
+        const body = doc.querySelector('div.article__body').innerHTML;
+        const tag = doc.querySelector('div.article__tag').innerHTML;
+        callback({ title, sapo, body,tag });
+    } catch (error) {
+        console.log('Lỗi: ' + error);
+    }
+};
 
 
-export { fetchRssFeed };
+export { fetchRssFeed, getRssFeedDetail };
