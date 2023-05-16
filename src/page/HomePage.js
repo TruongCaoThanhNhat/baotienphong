@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Header from "../layout/header/Header";
 import Navigation from "../layout/navigation/Navigation";
 import "./home.scss";
+import {getRssFeedDetail} from "../util/RssFeed";
 
 
 const HomePage = () => {
