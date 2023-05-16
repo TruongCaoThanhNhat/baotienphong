@@ -4,6 +4,7 @@ import {Fragment} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import HomePage from "./page/HomePage";
 import DetailPage from "./page/DetailPage";
+import DanhMuc from "./page/DanhMuc";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
               <Routes>
                   <Route path="/" element={<HomePage></HomePage>} />
                   <Route path="/chitiet" element={<DetailPage></DetailPage>} />
+                  <Route path="/danhmuc" element={<DanhMuc></DanhMuc>} />
               </Routes>
           </BrowserRouter>
       </Fragment>
