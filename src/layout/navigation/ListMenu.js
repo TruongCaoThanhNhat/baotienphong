@@ -2,8 +2,8 @@ import React, { Fragment, useEffect, useState } from 'react';
 import DropDown from '../../components/DropDown';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
-// import { loadCategory } from '../../store/Action';
-// import categorys from '../../data/DanhMuc';
+import { loadCategory } from '../../store/Action';
+import categorys from '../../data/DanhMuc';
 
 const ListMenu = () => {
     const { cate, setCate } = useState();
@@ -11,7 +11,7 @@ const ListMenu = () => {
     // console.log(listCategory);
     const dispatch = useDispatch();
     useEffect(() => {
-        // dispatch(loadCategory(categorys))
+        dispatch(loadCategory(categorys))
     }, [])
     return (
         <Fragment>
