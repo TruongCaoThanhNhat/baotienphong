@@ -1,0 +1,42 @@
+@import "../App.scss";
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background-color: $primary-color;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 8px 8px;
+    z-index: 1;
+
+    li {
+        a {
+            font-size: 14px;
+            font-weight: 600;
+            color: $white;
+        }
+
+        &:hover {
+            a {
+                color: $white !important;
+            }
+
+            background-color: $primary-color;
+        }
+    }
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropdown-content:hover {
+    display: block;
+}

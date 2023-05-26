@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {getRssFeedDetail} from "../util/RssFeed";
+import React, { useEffect, useState } from 'react';
+import { getRssFeedDetail } from "../util/RssFeed";
 import Header from "../layout/header/Header";
 import Navigation from "../layout/navigation/Navigation";
 import "./detail.css"
