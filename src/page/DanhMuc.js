@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import { fetchRssFeed, getRssFeedDetail } from "../util/RssFeed";
 import Header from "../layout/header/Header";
 import Navigation from "../layout/navigation/Navigation";
+import AarticleDm from "../components/arlicleDM/AarticleDm"
 
-const DanuMuc = () => {
+const DanhMuc = () => {
     const [dataArticle, setDataArticle] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const dataArticle = await fetchRssFeed("https://tienphong.vn/rss/home.rss");
+                const dataArticle = await fetchRssFeed("https://tienphong.vn/rss/xa-hoi-2.rss");
                 setDataArticle(dataArticle);
             } catch (error) {
                 console.error("Error:", error);
@@ -17,28 +18,25 @@ const DanuMuc = () => {
         };
         fetchData();
     }, []);
+    console.log(dataArticle);
 
-    const handleArticleClick = async (link) => {
-        try {
-            const article = await getRssFeedDetail(link);
-            console.log(article.content); // In ra nội dung chi tiết của bài viết
-        } catch (error) {
-            console.error("Error:", error);
-        }
-    };
 
     return (
-        <div>
+        <Fragment>
             <Header></Header>
             <Navigation></Navigation>
-            {dataArticle.map((article) => (
-                <div key={article.guid} onClick={() => handleArticleClick(article.link)}>
-                    <div>{article.title}</div>
-                    <div>{article.contentSnippet}</div>
-                </div>
-            ))}
-        </div>
+            <div className='articleDM'>
+                {
+                    dataArticle.map((item, index) => (
+                        <div key={index}>
+                            <AarticleDm feeds={item}> </AarticleDm>
+                        </div>
+                    ))
+                }
+            </div>
+
+        </Fragment>
     );
 };
 
-export default DanuMuc;
+export default DanhMuc;
