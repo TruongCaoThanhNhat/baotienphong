@@ -9,7 +9,7 @@ const Header = () => {
                 <a href='#' className="logo">
                     <img srcSet="logo-web-white.png" alt="" />
                 </a>
-                <FormSearch></FormSearch>
+                {/*<FormSearch></FormSearch>*/}
                 <div className="day">Chủ Nhật, 07/05/2023, 15:50:51 GMT+7</div>
             </div>
         </div>
