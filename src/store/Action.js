@@ -11,3 +11,9 @@ export const addHistory = (data) => {
         payload: data
     }
 }
+export const deleteHistory = (data) => {
+    return {
+        type: 'history.delete',
+        payload: data
+    }
+}

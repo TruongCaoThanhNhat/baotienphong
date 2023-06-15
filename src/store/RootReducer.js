@@ -30,6 +30,15 @@ export const root = (state = initState, action) => {
                     ]
                 }
             }
+
+        case 'history.delete': {
+            let his = state.history.filter(item => item.id !== action.payload.id);
+            localStorage.setItem('history', JSON.stringify(his));
+            return {
+                ...state,
+                history: his
+            }
+        }
         default:
             return state;
     }

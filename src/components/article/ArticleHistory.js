@@ -1,7 +1,7 @@
 import React from 'react';
-import { addHistory } from '../../store/Action';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { addHistory, deleteHistory } from '../../store/Action';
 
 const ArticleHistory = ({ feed }) => {
     const { title, image, link, updated, description, cate, id, isViewed } = feed;
@@ -46,10 +46,18 @@ const ArticleHistory = ({ feed }) => {
     const listHistory = useSelector(state => state.root.history);
     console.log(listHistory);
 
+    // bi loi xoa truc tiep redux khong chap nhan
     // function handelDelHistory(article) {
     //     article.isViewed = false;
     //     dispatch(deleteHistory(article));
     // }
+    function handelDelHistory(article) {
+        const updatedArticle = {
+            ...article,
+            isViewed: false,
+        };
+        dispatch(deleteHistory(updatedArticle));
+    }
 
     return (
         // <div>
@@ -64,7 +72,7 @@ const ArticleHistory = ({ feed }) => {
             <a href='' className='title'>{title}</a>
             <span className='date'>{updated}</span>
             <button className='date' onClick={() => handleButtonClick(getSlugFromLink(link))}>Chi tiết</button>
-            {/* <button className='date' onClick={() => handelDelHistory(feed)}>xoa</button> */}
+            <button className='date' onClick={() => handelDelHistory(feed)}>xoa</button>
         </div>
         // </div>
     );
