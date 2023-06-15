@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.scss';
 import FormSearch from '../../components/FormSearch';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -11,6 +12,9 @@ const Header = () => {
                 </a>
                 <FormSearch></FormSearch>
                 <div className="day">Chủ Nhật, 07/05/2023, 15:50:51 GMT+7</div>
+                <NavLink to="history">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </NavLink>
             </div>
         </div>
     );

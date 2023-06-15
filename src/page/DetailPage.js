@@ -2,8 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { getRssFeedDetail } from "../util/RssFeed";
 import Header from "../layout/header/Header";
 import Navigation from "../layout/navigation/Navigation";
+import { useParams } from 'react-router-dom';
 
 const DetailPage = () => {
+
+    // lấy đường dẫn lại
+    const { slug } = useParams();
+    // console.log(slug);
+    const link = `https://tienphong.vn/${slug}`
+    // console.log(link);
+
     const [content, setContent] = useState({
         title: '',
         sapo: '',
@@ -13,10 +21,10 @@ const DetailPage = () => {
     });
 
     useEffect(() => {
-        getRssFeedDetail('https://tienphong.vn/buoc-qua-noi-so-tao-dot-pha-kinh-te-tinh-6-dam-5-that-phat-trien-toan-dien-post1534626.tpo', (result) => {
+        getRssFeedDetail(link, (result) => {
             // console.log(result.title); // In ra tiêu đề
             // console.log(result.sapo); // In ra mô tả
-            // console.log(result.body); // In ra nội dung
+            console.log(result.body); // In ra nội dung
             // console.log(result.tag);
             console.log(result.more);
             const text = result;
@@ -38,10 +46,10 @@ const DetailPage = () => {
         <div>
             <Header></Header>
             <Navigation></Navigation>
-            {/*<div>{content.title}</div>*/}
-            {/*<div>{content.sapo}</div>*/}
-            {/*<div dangerouslySetInnerHTML={{ __html: content.body }}></div>*/}
-            {/*<div dangerouslySetInnerHTML={{ __html: content.tag }}></div>*/}
+            <div>{content.title}</div>
+            <div>{content.sapo}</div>
+            <div dangerouslySetInnerHTML={{ __html: content.body }}></div>
+            <div dangerouslySetInnerHTML={{ __html: content.tag }}></div>
             <div dangerouslySetInnerHTML={{ __html: content.more }}></div>
         </div>
     );

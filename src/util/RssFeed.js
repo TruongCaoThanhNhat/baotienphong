@@ -47,8 +47,9 @@ const getRssFeedDetail = async (url, callback) => {
         const sapo = doc.querySelector('div.article__sapo').textContent;
         const body = doc.querySelector('div.article__body').innerHTML;
         const tag = doc.querySelector('div.article__tag').innerHTML;
-        const more = doc.querySelector('div.more-story-3').innerHTML;
-        callback({ title, sapo, body, tag, more });
+        // const more = doc.querySelector('div.recommend-news').textContent;
+        // callback({ title, sapo, body, tag, more });
+        callback({ title, sapo, body, tag });
     } catch (error) {
         console.log('Lỗi: ' + error);
     }
