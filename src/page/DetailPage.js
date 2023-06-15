@@ -2,9 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { getRssFeedDetail } from "../util/RssFeed";
 import Header from "../layout/header/Header";
 import Navigation from "../layout/navigation/Navigation";
+
+import { useParams } from 'react-router-dom';
+
 import "./detail.css"
 
+
 const DetailPage = () => {
+
+    // lấy đường dẫn lại
+    const { slug } = useParams();
+    // console.log(slug);
+    const link = `https://tienphong.vn/${slug}`
+    // console.log(link);
+
     const [content, setContent] = useState({
         title: '',
         sapo: '',
@@ -15,11 +26,12 @@ const DetailPage = () => {
     });
 
     useEffect(() => {
-        getRssFeedDetail('https://tienphong.vn/7-vung-dat-do-william-cai-quan-post1536755.tpo', (result) => {
-            console.log(result.title); // In ra tiêu đề
-            console.log(result.sapo); // In ra mô tả
+        getRssFeedDetail(link, (result) => {
+            // console.log(result.title); // In ra tiêu đề
+            // console.log(result.sapo); // In ra mô tả
             console.log(result.body); // In ra nội dung
-            console.log(result.tag);
+            // console.log(result.tag);
+
             console.log(result.more);
             console.log(result.comment);
             const text = result;
@@ -42,6 +54,8 @@ const DetailPage = () => {
         <div>
             <Header></Header>
             <Navigation></Navigation>
+
+
             <div className="article__title cms-title">{content.title}</div>
             <div className="article__sapo cms-desc">{content.sapo}</div>
             <div className="article__body cms-body" dangerouslySetInnerHTML={{ __html: content.body }}></div>

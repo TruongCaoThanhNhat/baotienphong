@@ -4,3 +4,16 @@ export const loadCategory = (data) => {
         payload: data
     }
 }
+
+export const addHistory = (data) => {
+    return {
+        type: 'history.add',
+        payload: data
+    }
+}
+export const deleteHistory = (data) => {
+    return {
+        type: 'history.delete',
+        payload: data
+    }
+}

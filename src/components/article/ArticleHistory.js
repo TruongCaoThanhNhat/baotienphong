@@ -1,21 +1,19 @@
 import React from 'react';
-import "./article.scss";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addHistory } from '../../store/Action';
+import { addHistory, deleteHistory } from '../../store/Action';
 
-const Article = ({ feed }) => {
-    const { title, image, link, updated, description, cate } = feed;
+const ArticleHistory = ({ feed }) => {
+    const { title, image, link, updated, description, cate, id, isViewed } = feed;
     // const article = feed;
     const article = {
         ...feed,
-        // id: id,
-        id: Math.random().toString(36).substring(2, 9),
-        isViewed: false,
+        // // id: id,
+        // id: Math.random().toString(36).substr(2, 9),
+        // isViewed: false,
     };
     // console.log(article);
 
-    // get slug for detail article
     function getSlugFromLink(link) {
         const lastSlashIndex = link.lastIndexOf('/');
         const slug = link.substring(lastSlashIndex + 1);
@@ -27,7 +25,6 @@ const Article = ({ feed }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    // lich su xem
     const historyRedux = useSelector(state => state.root.history);
     function handelAddHistory(article) {
         article.isViewed = true;
@@ -38,7 +35,6 @@ const Article = ({ feed }) => {
             dispatch(addHistory(article));
         }
     }
-
     const handleButtonClick = (link) => {
         handelAddHistory(article);
 
@@ -46,6 +42,22 @@ const Article = ({ feed }) => {
         navigate(slug);
     };
 
+    // xoa lich su
+    const listHistory = useSelector(state => state.root.history);
+    console.log(listHistory);
+
+    // bi loi xoa truc tiep redux khong chap nhan
+    // function handelDelHistory(article) {
+    //     article.isViewed = false;
+    //     dispatch(deleteHistory(article));
+    // }
+    function handelDelHistory(article) {
+        const updatedArticle = {
+            ...article,
+            isViewed: false,
+        };
+        dispatch(deleteHistory(updatedArticle));
+    }
 
     return (
         // <div>
@@ -57,16 +69,14 @@ const Article = ({ feed }) => {
                 />
             </a>
             {cate}
-            <a href={link} className='title'>{title}</a>
+            <a href='' className='title'>{title}</a>
             <span className='date'>{updated}</span>
             <button className='date' onClick={() => handleButtonClick(getSlugFromLink(link))}>Chi tiết</button>
-            {/* <button className='date'>Chi tiết</button> */}
-            {/* <div className='decription' dangerouslySetInnerHTML={{ __html: description }}></div> */}
-            {/* <span className='description'>{description}</span> */}
-
+            <button className='date' onClick={() => handelDelHistory(feed)}>xoa</button>
         </div>
-
+        // </div>
     );
 };
 
-export default Article;
+
+export default ArticleHistory;
