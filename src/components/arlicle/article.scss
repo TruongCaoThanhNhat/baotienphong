@@ -1,0 +1,37 @@
+@import "../../App";
+
+.article {
+  margin-top: 40px;
+  height: 270px;
+  width: 300px;
+
+  img {
+    width: 300px;
+    height: 180px;
+  }
+
+  a {
+    width: 100%;
+    color: $text-black;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    text-decoration: none;
+    transition: 0.4s;
+    display: block;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .title {
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+  }
+
+  .decription {
+    margin-top: 80px;
+  }
+}

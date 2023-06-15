@@ -1,3 +1,4 @@
+
 import './App.scss';
 import { Fragment } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -18,6 +19,7 @@ function App() {
             </BrowserRouter>
         </Fragment>
     );
+
 }
 
 export default App;
