@@ -1,4 +1,4 @@
-@import "../App.scss";
+@import "../../App.scss";
 
 .content-home {
     padding: 0 40px;
@@ -98,58 +98,10 @@
 
 }
 
-
-
-
-.block-second {
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.block-third {
+.list-home {
     padding: 0 40px;
     margin-top: 50px;
-    display: flex;
-
-    .block-left {}
-
-    .block-right {
-        margin-left: 40px;
-
-
-        // ListArticleTitle
-        .title-cate {
-            width: 80px;
-            // height: ;
-            background-color: #343a40;
-            color: #ffffff;
-            display: flex;
-            font-size: 18px;
-            font-weight: 700;
-            line-height: 25.74px;
-            padding: 8px 8px 2px;
-            text-align: left;
-            text-transform: uppercase
-        }
-
-        .list-article {
-            width: 320px;
-
-            ul {
-                width: 100%;
-                margin-top: 20px;
-                padding-left: unset;
-
-                li {
-                    margin-bottom: 10px;
-                    border-bottom: 1px solid #c9c8c8;
-                    padding-bottom: 16px;
-                }
-
-
-            }
-        }
-    }
-
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
 }
