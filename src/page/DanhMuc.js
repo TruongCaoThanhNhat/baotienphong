@@ -39,9 +39,14 @@ const DanhMuc = () => {
 
     return (
         <div>
-            <Header></Header>
-            <Navigation></Navigation>
+            <Header>
+
+            </Header>
+            <Navigation>
+
+            </Navigation>
             <FormSearch onSearch={handleSearch} />
+
             <div className="articleDM">
                 {filteredData.map((item, index) => (
                     <div key={index}>
