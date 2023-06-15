@@ -12,9 +12,12 @@ const Header = () => {
                 </a>
                 <FormSearch></FormSearch>
                 <div className="day">Chủ Nhật, 07/05/2023, 15:50:51 GMT+7</div>
-                <NavLink to="history">
+                <a href="history">
                     <i class="fa-solid fa-clock-rotate-left"></i>
-                </NavLink>
+                </a>
+                {/* <Link to="history">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </Link> */}
             </div>
         </div>
     );

@@ -1,5 +1,15 @@
+const loadHistory = () => {
+    let his = localStorage.getItem('history');
+    if (his) {
+        return JSON.parse(his);
+    } else {
+        return [];
+    }
+}
+
 const initState = {
     categorys: [],
+    history: loadHistory(),
 }
 export const root = (state = initState, action) => {
     switch (action.type) {
@@ -9,6 +19,17 @@ export const root = (state = initState, action) => {
                 categorys: action.payload
             };
 
+        case 'history.add':
+            {
+                let his = [...state.history, action.payload];
+                localStorage.setItem('history', JSON.stringify(his));
+                return {
+                    ...state,
+                    history: [
+                        ...his
+                    ]
+                }
+            }
         default:
             return state;
     }
