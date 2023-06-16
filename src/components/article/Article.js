@@ -49,17 +49,17 @@ const Article = ({ feed }) => {
 
     return (
         // <div>
-        <div className="article">
-            <a href={link}>
-                <img
-                    src={image}
-                    alt=""
-                />
-            </a>
+        <div className="article" onClick={() => handleButtonClick(getSlugFromLink(link))}>
+            {/* <a href={link}>
+            </a> */}
+            <img
+                src={image}
+                alt=""
+            />
             {cate}
-            <a href={link} className='title'>{title}</a>
+            <h2 className='title'>{title}</h2>
             <span className='date'>{updated}</span>
-            <button className='date' onClick={() => handleButtonClick(getSlugFromLink(link))}>Chi tiết</button>
+            {/* <button className='date' onClick={() => handleButtonClick(getSlugFromLink(link))}>Chi tiết</button> */}
             {/* <button className='date'>Chi tiết</button> */}
             {/* <div className='decription' dangerouslySetInnerHTML={{ __html: description }}></div> */}
             {/* <span className='description'>{description}</span> */}
