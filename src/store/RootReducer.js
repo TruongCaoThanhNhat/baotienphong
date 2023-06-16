@@ -6,6 +6,14 @@ const loadHistory = () => {
         return [];
     }
 }
+const loadComment = ()=> {
+    let cmt = localStorage.getItem('comment');
+    if(cmt){
+        return JSON.parse(cmt);
+    }else {
+        return [];
+    }
+}
 
 const initState = {
     categorys: [],
@@ -30,6 +38,17 @@ export const root = (state = initState, action) => {
                     ]
                 }
             }
+        // case 'comment.add':
+        // {
+        //     let cmt = [...state.comment, action.payload];
+        //     localStorage.setItem('comment', JSON.stringify(cmt));
+        //     return {
+        //         ...state,
+        //         comment: [
+        //             ...cmt
+        //         ]
+        //     }
+        // }
 
         case 'history.delete': {
             let his = state.history.filter(item => item.id !== action.payload.id);
