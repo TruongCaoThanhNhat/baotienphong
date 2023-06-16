@@ -18,7 +18,7 @@ const fetchRssFeed = async (url) => {
             const link = linkElements.length > 0 ? linkElements[0].textContent : '';
             return {
                 title: item.querySelector('title').textContent,
-                description: item.querySelector('description').textContent,
+                description: item.querySelector('description').innerHTML,
                 link,
                 pubDate: item.querySelector('pubDate').textContent,
                 updated: item.querySelector('updated').textContent,
@@ -60,6 +60,7 @@ const getRssFeedDetail = async (url, callback) => {
         // const more = doc.querySelector('div.recommend-news').textContent;
         // callback({ title, sapo, body, tag, more });
         callback({ title, sapo, body, tag });
+
 
         // const more = doc.querySelector('div.more-story-3').innerHTML;
 

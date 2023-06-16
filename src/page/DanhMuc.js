@@ -7,23 +7,25 @@ import FormSearch from "../components/FormSearch";
 
 
 
-const DanhMuc = () => {
+const DanhMuc = ({ rssLink, title }) => {
+    console.log(rssLink)
     const [dataArticle, setDataArticle] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
-        fetchData();
-    }, []);
+        const fetchData = async () => {
+            try {
+                const dataArticle = await fetchRssFeed(rssLink);
+                setDataArticle(dataArticle);
+                setFilteredData(dataArticle);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        };
+        fetchData()
+    }, [rssLink]);
 
-    const fetchData = async () => {
-        try {
-            const dataArticle = await fetchRssFeed('https://tienphong.vn/rss/home.rss');
-            setDataArticle(dataArticle);
-            setFilteredData(dataArticle);
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    };
+
 
     const handleSearch = (searchTerm) => {
         const filtered = dataArticle.filter((item) => {
@@ -39,12 +41,9 @@ const DanhMuc = () => {
 
     return (
         <div>
-            <Header>
-
-            </Header>
-            <Navigation>
-
-            </Navigation>
+            <Header></Header>
+            <Navigation></Navigation>
+            <h2>{title}</h2>
             <FormSearch onSearch={handleSearch} />
 
             <div className="articleDM">

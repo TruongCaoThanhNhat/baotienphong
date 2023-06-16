@@ -3,9 +3,8 @@ import "./article.scss";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addHistory } from '../../store/Action';
-// import { addComment } from '../../store/Action';
 
-const Article = ({ feed }) => {
+const ArticleTitle = ({ feed }) => {
     const { title, image, link, updated, description, cate } = feed;
     // const article = feed;
     const article = {
@@ -50,16 +49,16 @@ const Article = ({ feed }) => {
 
     return (
         // <div>
-        <div className="article" onClick={() => handleButtonClick(getSlugFromLink(link))}>
+        <div className="article-title" onClick={() => handleButtonClick(getSlugFromLink(link))}>
             {/* <a href={link}>
             </a> */}
-            <img
+            {/* <img
                 src={image}
                 alt=""
-            />
+            /> */}
             {cate}
             <h2 className='title'>{title}</h2>
-            <span className='date'>{updated}</span>
+            {/* <span className='date'>{updated}</span> */}
             {/* <button className='date' onClick={() => handleButtonClick(getSlugFromLink(link))}>Chi tiết</button> */}
             {/* <button className='date'>Chi tiết</button> */}
             {/* <div className='decription' dangerouslySetInnerHTML={{ __html: description }}></div> */}
@@ -70,4 +69,4 @@ const Article = ({ feed }) => {
     );
 };
 
-export default Article;
+export default ArticleTitle;
