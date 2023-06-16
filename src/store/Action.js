@@ -17,3 +17,9 @@ export const deleteHistory = (data) => {
         payload: data
     }
 }
+// export const addComment = (data) => {
+//     return {
+//         type: 'comment.add',
+//         payload: data
+//     }
+// }
