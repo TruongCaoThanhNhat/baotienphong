@@ -18,7 +18,7 @@ const fetchRssFeed = async (url) => {
             const link = linkElements.length > 0 ? linkElements[0].textContent : '';
             return {
                 title: item.querySelector('title').textContent,
-                description: item.querySelector('description').textContent,
+                description: item.querySelector('description').innerHTML,
                 link,
                 pubDate: item.querySelector('pubDate').textContent,
                 updated: item.querySelector('updated').textContent,

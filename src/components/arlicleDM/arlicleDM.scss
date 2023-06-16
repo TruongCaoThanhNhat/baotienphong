@@ -1,0 +1,55 @@
+@import "../../App";
+
+.articleDM {
+    width: 100%;
+    //display: grid;
+    //grid-template-columns: repeat(4,1fr);
+
+    //background-color: red;
+    //justify-content: space-between;
+
+}
+
+.articles {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 10px;
+    height: 270px;
+    width: 300px;
+
+    .imga {
+        width: 300px;
+        height: 180px;
+    }
+
+
+    a {
+        width: 100%;
+        color: $text-black;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25px;
+        text-decoration: none;
+        transition: 0.4s;
+        display: flex;
+        margin-left: 20px;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+
+    .title {
+        width: 500px;
+        display: block;
+        margin-top: 10px;
+    }
+
+    .decription {
+        margin-top: 70px;
+    }
+
+    .date {
+        margin-left: 20px;
+    }
+}

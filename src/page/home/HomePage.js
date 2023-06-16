@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "../../layout/header/Header";
-import Navigation from "../../layout/navigation/Navigation";
 import "./home.scss";
-import ListArticleHome from "./ListArticleHome";
 import { fetchRssFeed } from "../../util/RssFeed";
 import Article from "../../components/article/Article";
 import HeaderLayout from "../../layout/HeaderLayout";
@@ -23,6 +20,13 @@ const HomePage = () => {
     };
     fetchData();
   }, []);
+
+  // Chia dữ liệu thành 2 phần
+  const halfIndex = Math.ceil(dataArticle.length / 2);
+  const firstHalf = dataArticle.slice(0, halfIndex);
+  const secondHalf = dataArticle.slice(halfIndex);
+  console.log(firstHalf)
+
 
   return (
     <div className="home">
