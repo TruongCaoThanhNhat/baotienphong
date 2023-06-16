@@ -9,8 +9,10 @@ const AarticleDm = ({ feeds }) => {
 
     return (
         // <div className='articleDM'>
-        <div className="articles">
-            <div className="image">
+
+            <div className="articles">
+                <div className="image">
+
                 <a href={link}>
                     <img
                         src={image}
@@ -18,18 +20,19 @@ const AarticleDm = ({ feeds }) => {
                         className='imga'
                     />
                 </a>
-            </div>
-            {cate}
-            <div className='titleDate'>
+                </div>
+                {cate}
+                <div className='titleDate'>
                 <a href={link} className='title'>{title}</a>
                 <span className='date'>{updated}</span>
-            </div>
-            {/*<span className='des'> {description} </span>*/}
-            {/* <button className='date'>Chi tiết</button>*/}
-            {/* <div className='decription' dangerouslySetInnerHTML={{ __html: description }}></div> */}
-            {/* <span className='description'>{description}</span> */}
+                </div>
+                {/*<span className='des'> {description} </span>*/}
+                {/* <button className='date'>Chi tiết</button>*/}
+                {/* <div className='decription' dangerouslySetInnerHTML={{ __html: description }}></div> */}
+                {/* <span className='description'>{description}</span> */}
 
-        </div>
+            </div>
+
         // </div>
     );
 };
