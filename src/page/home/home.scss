@@ -100,8 +100,36 @@
 
 .list-home {
     padding: 0 40px;
-    margin-top: 50px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.layout {
+    display: flex;
+}
+
+.article-right {
+    margin-top: 20px;
+}
+
+.list-history {
+    padding: 0 40px;
+    margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.caption {
+    margin-left: 40px;
+    margin-top: 160px;
 }

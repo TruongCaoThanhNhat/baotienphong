@@ -32,7 +32,7 @@ const DanhMuc = () => {
             const title = item.title.toLowerCase();
             const description = item.description.toLowerCase();
             const searchTermLower = searchTerm.toLowerCase();
-            return title.includes(searchTermLower) || description.includes(searchTermLower);
+            return title.includes(searchTermLower);
         });
         setFilteredData(filtered);
     };

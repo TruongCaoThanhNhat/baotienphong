@@ -1,103 +1,103 @@
-const categorys = [
+const route = [
     {
         id: 1,
         name: 'Xã hội',
         link: "/xa-hoi",
         rssLink: "https://tienphong.vn/rss/xa-hoi-2.rss",
-        dropdown: [
-            {
-                id: 1,
-                name: 'Chính trị',
-                link: "chinh-tri",
-                rssLink: "https://tienphong.vn/rss/chinh-tri-308.rss",
-            },
-            {
-                id: 2,
-                name: 'Tin tức',
-                link: "tin-tuc",
-                rssLink: "https://tienphong.vn/rss/xa-hoi-tin-tuc-104.rss",
-            },
-            {
-                id: 3,
-                name: 'Chuyện hôm nay',
-                link: "chuyen-hom-nay",
-                rssLink: "https://tienphong.vn/rss/xa-hoi-2.rss",
-            },
-            {
-                id: 4,
-                name: 'Phóng sự',
-                link: "phong-su",
-            },
+        // dropdown: [
+        //     {
+        //         id: 1,
+        //         name: 'Chính trị',
+        //         link: "chinh-tri",
+        //         rssLink: "https://tienphong.vn/rss/chinh-tri-308.rss",
+        //     },
+        //     {
+        //         id: 2,
+        //         name: 'Tin tức',
+        //         link: "tin-tuc",
+        //         rssLink: "https://tienphong.vn/rss/xa-hoi-tin-tuc-104.rss",
+        //     },
+        //     {
+        //         id: 3,
+        //         name: 'Chuyện hôm nay',
+        //         link: "chuyen-hom-nay",
+        //         rssLink: "https://tienphong.vn/rss/xa-hoi-2.rss",
+        //     },
+        //     {
+        //         id: 4,
+        //         name: 'Phóng sự',
+        //         link: "phong-su",
+        //     },
 
-        ]
+        // ]
     },
     {
         id: 2,
         name: 'Kinh tế',
         link: "/kinh-te",
         rssLink: "https://tienphong.vn/rss/kinh-te-3.rss",
-        dropdown: [
-            {
-                id: 1,
-                name: 'Doanh ngiệp',
-                link: "doanh-ngiep",
-            },
-            {
-                id: 2,
-                name: 'Doanh nhân',
-                link: "doanh-nhan",
-            },
-            {
-                id: 3,
-                name: 'Chứng khoán',
-                link: "chung-khoan",
-            }
-            ,
-            {
-                id: 4,
-                name: 'Du lịch',
-                link: "du-lich",
-            }
-            ,
-            {
-                id: 5,
-                name: 'Giảm nghèo bền vững',
-                link: "giam-ngheo-ben-vung",
-            }
-        ]
+        // dropdown: [
+        //     {
+        //         id: 1,
+        //         name: 'Doanh ngiệp',
+        //         link: "doanh-ngiep",
+        //     },
+        //     {
+        //         id: 2,
+        //         name: 'Doanh nhân',
+        //         link: "doanh-nhan",
+        //     },
+        //     {
+        //         id: 3,
+        //         name: 'Chứng khoán',
+        //         link: "chung-khoan",
+        //     }
+        //     ,
+        //     {
+        //         id: 4,
+        //         name: 'Du lịch',
+        //         link: "du-lich",
+        //     }
+        //     ,
+        //     {
+        //         id: 5,
+        //         name: 'Giảm nghèo bền vững',
+        //         link: "giam-ngheo-ben-vung",
+        //     }
+        // ]
     },
     {
         id: 3,
         name: 'Địa ốc',
         link: "/dia-oc",
         rssLink: "https://tienphong.vn/rss/dia-oc-166.rss",
-        dropdown: [
-            {
-                id: 1,
-                name: 'Đô thị',
-                link: "do-thi",
-            },
-            {
-                id: 2,
-                name: 'Thị trường',
-                link: "thi-truong",
-            },
-            {
-                id: 3,
-                name: 'Nhà đẹp',
-                link: "nha-dep",
-            },
-            {
-                id: 4,
-                name: 'Tư vấn',
-                link: "tu-van",
-            },
-            {
-                id: 5,
-                name: 'Dự án',
-                link: "du-an",
-            },
-        ]
+        // dropdown: [
+        //     {
+        //         id: 1,
+        //         name: 'Đô thị',
+        //         link: "do-thi",
+        //     },
+        //     {
+        //         id: 2,
+        //         name: 'Thị trường',
+        //         link: "thi-truong",
+        //     },
+        //     {
+        //         id: 3,
+        //         name: 'Nhà đẹp',
+        //         link: "nha-dep",
+        //     },
+        //     {
+        //         id: 4,
+        //         name: 'Tư vấn',
+        //         link: "tu-van",
+        //     },
+        //     {
+        //         id: 5,
+        //         name: 'Dự án',
+        //         link: "du-an",
+        //     },
+        // ]
     },
     {
         id: 4,
@@ -920,5 +920,115 @@ const danhmuc = [
         dropdown: [
         ]
     },
+    {
+        id: 19,
+        name: 'Chính trị',
+        link: "chinh-tri",
+        rssLink: "https://tienphong.vn/rss/chinh-tri-308.rss",
+    },
+    {
+        id: 20,
+        name: 'Tin tức',
+        link: "tin-tuc",
+        rssLink: "https://tienphong.vn/rss/xa-hoi-tin-tuc-104.rss",
+    },
+    {
+        id: 21,
+        name: 'Chuyện hôm nay',
+        link: "chuyen-hom-nay",
+        rssLink: "https://tienphong.vn/rss/xa-hoi-2.rss",
+    },
+    {
+        id: 22,
+        name: 'Phóng sự',
+        link: "phong-su",
+        rssLink: "https://tienphong.vn/rss/xa-hoi-phong-su-13.rss",
+    },
+    {
+        id: 23,
+        name: 'Doanh ngiệp',
+        link: "doanh-ngiep",
+        rssLink: "https://tienphong.vn/rss/kinh-te-doanh-nghiep-22.rss",
+    },
+    {
+        id: 24,
+        name: 'Doanh nhân',
+        link: "doanh-nhan",
+        rssLink: "https://tienphong.vn/rss/kinh-te-doanh-nhan-165.rss",
+    },
+    {
+        id: 25,
+        name: 'Chứng khoán',
+        link: "chung-khoan",
+        rssLink: "https://tienphong.vn/rss/kinh-te-chung-khoan-105.rss",
+    }
+    ,
+    {
+        id: 26,
+        name: 'Du lịch',
+        link: "du-lich",
+        rssLink: "https://tienphong.vn/rss/du-lich-220.rss",
+    }
+    ,
+    {
+        id: 27,
+        name: 'Giảm nghèo bền vững',
+        link: "giam-ngheo-ben-vung",
+        rssLink: "https://tienphong.vn/rss/giam-ngheo-ben-vung-413.rss",
+    },
+    {
+        id: 28,
+        name: 'Đô thị',
+        link: "do-thi",
+        rssLink: "https://tienphong.vn/rss/do-thi-269.rss",
+    },
+    {
+        id: 29,
+        name: 'Thị trường',
+        link: "thi-truong",
+        rssLink: "https://tienphong.vn/rss/thi-truong-270.rss",
+    },
+    {
+        id: 30,
+        name: 'Nhà đẹp',
+        link: "nha-dep",
+        rssLink: "https://tienphong.vn/rss/nha-dep-271.rss",
+    },
+    {
+        id: 31,
+        name: 'Tư vấn',
+        link: "tu-van",
+        rssLink: "https://tienphong.vn/rss/tu-van-dia-oc-272.rss",
+    },
+    {
+        id: 32,
+        name: 'Dự án',
+        link: "du-an",
+        rssLink: "https://tienphong.vn/rss/du-an-169.rss",
+    },
+    {
+        id: 33,
+        name: 'Bác sĩ online',
+        link: "bac-si-online",
+        rssLink: "https://tienphong.vn/rss/bac-si-online-304.rss",
+    },
+    {
+        id: 34,
+        name: 'Thuốc dùng  - Thuốc tốt',
+        link: "thuoc-dung-thuoc-tot",
+        rssLink: "https://tienphong.vn/rss/thuoc-dung-thuoc-tot-305.rss",
+    },
+    {
+        id: 35,
+        name: 'Làm đẹp mỗi ngày',
+        link: "lam-dep-moi-ngay",
+        rssLink: "https://tienphong.vn/rss/lam-dep-moi-ngay-306.rss",
+    },
+    {
+        id: 36,
+        name: 'Thì thầm bên gối',
+        link: "thi-tham-ben-goi",
+        rssLink: "https://tienphong.vn/rss/suc-khoe-thi-tham-ben-goi-144.rss",
+    },
 ]
-export default categorys;
+export default route;
