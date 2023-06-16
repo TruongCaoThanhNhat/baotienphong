@@ -60,21 +60,21 @@ const ArticleHistory = ({ feed }) => {
     }
 
     return (
-        // <div>
-        <div className="article">
-            <a href={link}>
+        <div className='history'>
+            <div className="article article-history" onClick={() => handleButtonClick(getSlugFromLink(link))}>
+                {/* <a href={link}>
+            </a> */}
                 <img
                     src={image}
                     alt=""
                 />
-            </a>
-            {cate}
-            <a href='' className='title'>{title}</a>
-            <span className='date'>{updated}</span>
-            <button className='date' onClick={() => handleButtonClick(getSlugFromLink(link))}>Chi tiết</button>
-            <button className='date' onClick={() => handelDelHistory(feed)}>xoa</button>
+                {cate}
+                <p className='title'>{title}</p>
+                <span className='date'>{updated}</span>
+                {/* <button className='date' onClick={() => handleButtonClick(getSlugFromLink(link))}>Chi tiết</button> */}
+            </div>
+            <button className='btn-delete' onClick={() => handelDelHistory(feed)}>Xóa</button>
         </div>
-        // </div>
     );
 };
 

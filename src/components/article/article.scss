@@ -1,9 +1,10 @@
 @import "../../App.scss";
 
 .article {
-    margin-top: 40px;
+    margin-top: 20px;
     height: 270px;
     width: 300px;
+    cursor: pointer;
 
     img {
         width: 300px;
@@ -28,10 +29,33 @@
     .title {
         width: 100%;
         display: block;
-        margin-top: 10px;
+        font-size: 18px;
+        margin-top: 4px;
+        font-weight: 600;
+        margin-top: 8px;
     }
 
     .decription {
         margin-top: 80px;
     }
+}
+
+// article history
+.history {}
+
+.btn-delete {
+    border: none;
+    outline: none;
+    padding: 4px 10px;
+    background-color: rgb(243, 87, 87);
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    // margin-left: 120px;
+    // position: absolute;
+}
+
+.article-history {
+    height: 300px;
+    margin-top: 40px;
 }
