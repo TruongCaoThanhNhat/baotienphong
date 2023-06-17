@@ -1,6 +1,6 @@
 @import "../../App";
 .articleDM{
-  //padding: 0 00px;
+  padding: 0 00px;
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -9,8 +9,6 @@
 }
 
 .articles {
-  //display: flex;
-  //margin-left: 0px;
   margin-top: 10px;
   height: 270px;
   width: 300px;

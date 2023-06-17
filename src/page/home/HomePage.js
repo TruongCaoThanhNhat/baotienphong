@@ -78,24 +78,6 @@ const HomePage = () => {
                         ))
                     )}
                 </section>
-                {/*<section className="list-home first">*/}
-                {/*    /!* <ListArticleHome></ListArticleHome> *!/*/}
-                {/*    {*/}
-                {/*        firstSection.map((item, index) => (*/}
-                {/*            <div key={index}>*/}
-                {/*                <Article feed={item}></Article>*/}
-                {/*            </div>*/}
-                {/*        ))*/}
-                {/*    }*/}
-                {/*    {*/}
-                {/*        secondSection.map((item, index) => (*/}
-                {/*            <div key={index}>*/}
-                {/*                <Article feed={item}></Article>*/}
-                {/*            </div>*/}
-                {/*        ))*/}
-                {/*    }*/}
-                {/*</section>*/}
-
                 <section className="article-right">
                     {
                         thirdSection.map((item, index) => (
