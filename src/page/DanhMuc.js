@@ -45,6 +45,7 @@ const DanhMuc = () => {
             <Navigation>
 
             </Navigation>
+            {/*<h3 className="caption"></h3>*/}
             <FormSearch onSearch={handleSearch} />
 
             <div className="articleDM">
