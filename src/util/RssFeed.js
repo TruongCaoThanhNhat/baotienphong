@@ -47,10 +47,28 @@ const getRssFeedDetail = async (url, callback) => {
         const sapo = doc.querySelector('div.article__sapo').textContent;
         const body = doc.querySelector('div.article__body').innerHTML;
         const tag = doc.querySelector('div.article__tag').innerHTML;
+        // const more = doc.querySelector('div.more-story-3').innerHTML;
+        // const mgbox = doc.querySelector('div.mgbox').innerHTML;
+        const img = document.querySelectorAll('img');
+        img.forEach((img) => {
+            const src = img.getAttribute('src');
+            const dataSrc = img.getAttribute('data-src');
+            if (dataSrc) {
+                img.setAttribute('src', dataSrc);
+                img.removeAttribute('data-src');
+            }
+            // Sử dụng các giá trị thuộc tính ở đây
+            console.log('Src:', src);
+            console.log('data-src:', dataSrc);
+        });
 
-        // const more = doc.querySelector('div.recommend-news').textContent;
-        // callback({ title, sapo, body, tag, more });
         callback({ title, sapo, body, tag });
+
+
+        // const more = doc.querySelector('div.more-story-3').innerHTML;
+
+
+        // callback({ title, sapo, body, tag, more });
 
     } catch (error) {
         console.log('Lỗi: ' + error);
