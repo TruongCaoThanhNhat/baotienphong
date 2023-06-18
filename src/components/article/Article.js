@@ -3,6 +3,7 @@ import "./article.scss";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addHistory } from '../../store/Action';
+// import { addComment } from '../../store/Action';
 
 const Article = ({ feed }) => {
     const { title, image, link, updated, description, cate } = feed;

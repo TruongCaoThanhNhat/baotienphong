@@ -9,8 +9,10 @@ const AarticleDm = ({ feeds }) => {
 
     return (
         // <div className='articleDM'>
+
             <div className="articles">
                 <div className="image">
+
                 <a href={link}>
                     <img
                         src={image}
@@ -30,6 +32,7 @@ const AarticleDm = ({ feeds }) => {
                 {/* <span className='description'>{description}</span> */}
 
             </div>
+
         // </div>
     );
 };

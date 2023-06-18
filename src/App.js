@@ -10,6 +10,9 @@ import categorys from './data/DanhMuc';
 import route from './data/route';
 
 function App() {
+    if (JSON.parse(localStorage.getItem("comment")) === null) {
+        localStorage.setItem("comment", JSON.stringify([]));
+    }
     return (
         <Fragment>
             <BrowserRouter>
