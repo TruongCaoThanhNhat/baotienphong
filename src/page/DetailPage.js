@@ -30,7 +30,7 @@ const DetailPage = () => {
         event.preventDefault();
         const comment = event.target.elements.comment.value;
         const name = event.target.elements.name.value;
-        const newComment = {name: name, comment: comment};
+        const newComment = {id: link, name: name, comment: comment};
         const cmt = [newComment, ...comments]; // Thêm bình luận mới vào danh sách
         localStorage.setItem("comment", (JSON.stringify(cmt)));
         event.target.elements.comment.value = ''; // Xóa nội dung của input
@@ -69,6 +69,7 @@ const DetailPage = () => {
         },
         []);
 
+    const filteredComments = comments.filter(comment => comment.id === link);
 
     return (
         <div>
@@ -86,7 +87,7 @@ const DetailPage = () => {
 
             <div className={"comment"}>
                 {/*Hiển thị danh sách bình luận*/}
-                {comments.map((comment, index) => (
+                {filteredComments.map((comment, index) => (
                     <div key={index}>
                         <h4>{comment.name}:</h4>
                         <p>{comment.comment}</p>
@@ -106,7 +107,7 @@ const DetailPage = () => {
             </div>
 
 
-            <div className={"mgbox"} dangerouslySetInnerHTML={{__html: content.mgbox}}></div>
+            {/*<div className={"mgbox"} dangerouslySetInnerHTML={{__html: content.mgbox}}></div>*/}
 
         </div>
 
