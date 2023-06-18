@@ -6,6 +6,7 @@ import Navigation from "../layout/navigation/Navigation";
 import { useParams } from 'react-router-dom';
 
 import "./detail.css"
+import TextToSpeech from '../util/TextToSpeech';
 
 
 const DetailPage = () => {
@@ -32,10 +33,10 @@ const DetailPage = () => {
             console.log(result.body); // In ra nội dung
             // console.log(result.tag);
 
-            console.log(result.more);
-            console.log(result.comment);
+            // console.log(result.more);
+            // console.log(result.comment);
             const text = result;
-            console.log(content);
+            // console.log(content);
             // lỗi khong set trực tiếp giá trị cho content mà phải tạo cái mới set lại
             setContent({
                 ...content,
@@ -49,12 +50,27 @@ const DetailPage = () => {
 
             return result;
         });
-    }, []);
+    }, [link]);
+
+    const img = document.querySelectorAll('img');
+    img.forEach((img) => {
+        const src = img.getAttribute('src');
+        const dataSrc = img.getAttribute('data-src');
+        if (dataSrc) {
+            img.setAttribute('src', dataSrc);
+            img.removeAttribute('data-src');
+        }
+        // Sử dụng các giá trị thuộc tính ở đây
+        // console.log('Src:', src);
+        // console.log('data-src:', dataSrc);
+    });
+
     return (
         <div>
             <Header></Header>
             <Navigation></Navigation>
 
+            <TextToSpeech text={content.body} />
 
             <div className="article__title cms-title">{content.title}</div>
             <div className="article__sapo cms-desc">{content.sapo}</div>
