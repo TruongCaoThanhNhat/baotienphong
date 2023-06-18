@@ -6,6 +6,7 @@ import Navigation from "../layout/navigation/Navigation";
 import {useParams} from 'react-router-dom';
 
 import "./detail.css"
+import TextToSpeech from '../util/TextToSpeech';
 
 
 const DetailPage = () => {
@@ -41,6 +42,7 @@ const DetailPage = () => {
     })
 
     useEffect(() => {
+
             getRssFeedDetail(link, (result) => {
                 console.log(result.title); // In ra tiêu đề
                 console.log(result.sapo); // In ra mô tả
@@ -66,12 +68,15 @@ const DetailPage = () => {
 
         },
         []);
+
     const filteredComments = comments.filter(comment => comment.id === link);
+
     return (
         <div>
             <Header></Header>
             <Navigation></Navigation>
 
+            <TextToSpeech text={content.body} />
 
             <div className={"article__title cms-title"}>{content.title}</div>
             <div className={"article__sapo cms-desc"}>{content.sapo}</div>

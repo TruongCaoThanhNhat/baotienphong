@@ -13,6 +13,7 @@ const DanhMuc = ({ rssLink, title }) => {
     const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
+
         const fetchData = async () => {
             try {
                 const dataArticle = await fetchRssFeed(rssLink);
@@ -27,14 +28,25 @@ const DanhMuc = ({ rssLink, title }) => {
 
 
 
+
+    // const fetchDatas = async () => {
+    //     try {
+    //         const dataArticle = await fetchRssFeed('https://tienphong.vn/rss/kinh-te-3.rss');
+    //         setDataArticle(dataArticle);
+    //         setFilteredData(dataArticle);
+    //     } catch (error) {
+    //         console.error('Error:', error);
+    //     }
+    // };
+
     const handleSearch = (searchTerm) => {
         const filtered = dataArticle.filter((item) => {
             // Xử lý logic tìm kiếm tại đây
             // Ví dụ: so sánh tiêu đề hoặc mô tả với searchTerm
             const title = item.title.toLowerCase();
-            const description = item.description.toLowerCase();
+            // const description = item.description.toLowerCase();
             const searchTermLower = searchTerm.toLowerCase();
-            return title.includes(searchTermLower) || description.includes(searchTermLower);
+            return title.includes(searchTermLower);
         });
         setFilteredData(filtered);
     };
