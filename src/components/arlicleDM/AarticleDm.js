@@ -2,8 +2,8 @@ import React from 'react';
 import "./arlicleDM.scss";
 
 const AarticleDm = ({ feeds }) => {
-    const { title, image, link, updated, description, cate } = feeds;
-    const article = feeds;
+    const { title, image, link, updated, cate } = feeds;
+    // const article = feeds;
     // console.log(article);
 
 
