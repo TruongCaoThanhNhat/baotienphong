@@ -8,25 +8,28 @@ const categorys = [
             {
                 id: 1,
                 name: 'Chính trị',
-                link: "chinh-tri",
+                link: "/chinh-tri",
                 rssLink: "https://tienphong.vn/rss/chinh-tri-308.rss",
             },
             {
                 id: 2,
                 name: 'Tin tức',
-                link: "tin-tuc",
+                link: "/tin-tuc",
                 rssLink: "https://tienphong.vn/rss/xa-hoi-tin-tuc-104.rss",
             },
             {
                 id: 3,
                 name: 'Chuyện hôm nay',
-                link: "chuyen-hom-nay",
+                link: "/chuyen-hom-nay",
                 rssLink: "https://tienphong.vn/rss/xa-hoi-2.rss",
             },
             {
                 id: 4,
                 name: 'Phóng sự',
-                link: "phong-su",
+                link: "/phong-su",
+                rssLink: "https://tienphong.vn/rss/xa-hoi-2.rss",
+
+
             },
 
         ]
@@ -40,29 +43,29 @@ const categorys = [
             {
                 id: 1,
                 name: 'Doanh ngiệp',
-                link: "doanh-ngiep",
+                link: "/doanh-ngiep",
             },
             {
                 id: 2,
                 name: 'Doanh nhân',
-                link: "doanh-nhan",
+                link: "/doanh-nhan",
             },
             {
                 id: 3,
                 name: 'Chứng khoán',
-                link: "chung-khoan",
+                link: "/chung-khoan",
             }
             ,
             {
                 id: 4,
                 name: 'Du lịch',
-                link: "du-lich",
+                link: "/du-lich",
             }
             ,
             {
                 id: 5,
                 name: 'Giảm nghèo bền vững',
-                link: "giam-ngheo-ben-vung",
+                link: "/giam-ngheo-ben-vung",
             }
         ]
     },
@@ -75,27 +78,27 @@ const categorys = [
             {
                 id: 1,
                 name: 'Đô thị',
-                link: "do-thi",
+                link: "/do-thi",
             },
             {
                 id: 2,
                 name: 'Thị trường',
-                link: "thi-truong",
+                link: "/thi-truong",
             },
             {
                 id: 3,
                 name: 'Nhà đẹp',
-                link: "nha-dep",
+                link: "/nha-dep",
             },
             {
                 id: 4,
                 name: 'Tư vấn',
-                link: "tu-van",
+                link: "/tu-van",
             },
             {
                 id: 5,
                 name: 'Dự án',
-                link: "du-an",
+                link: "/du-an",
             },
         ]
     },
@@ -108,22 +111,22 @@ const categorys = [
             {
                 id: 1,
                 name: 'Bác sĩ online',
-                link: "bac-si-online",
+                link: "/bac-si-online",
             },
             {
                 id: 2,
                 name: 'Thuốc dùng  - Thuốc tốt',
-                link: "thuoc-dung-thuoc-tot",
+                link: "/thuoc-dung-thuoc-tot",
             },
             {
                 id: 3,
                 name: 'Làm đẹp mỗi ngày',
-                link: "lam-dep-moi-ngay",
+                link: "/lam-dep-moi-ngay",
             },
             {
                 id: 4,
                 name: 'Thì thầm bên gối',
-                link: "thi-tham-ben-goi",
+                link: "/thi-tham-ben-goi",
             },
         ]
     },
@@ -136,12 +139,12 @@ const categorys = [
             {
                 id: 1,
                 name: 'Phân tích -  Bình luận',
-                link: "phan-tich-biinh-luan",
+                link: "/phan-tich-biinh-luan",
             },
             {
                 id: 2,
                 name: 'Chuyện lạ',
-                link: "chuyen-la",
+                link: "/chuyen-la",
             },
         ]
     },
@@ -155,7 +158,7 @@ const categorys = [
             {
                 id: 1,
                 name: 'Nhịp sống',
-                link: "nhip-song",
+                link: "/nhip-song",
             },
             {
                 id: 2,
@@ -165,7 +168,7 @@ const categorys = [
             {
                 id: 3,
                 name: 'Tài năng trẻ',
-                link: "tai-nang-tre",
+                link: "/tai-nang-tre",
             },
         ]
     },
@@ -452,7 +455,7 @@ const categorys = [
     {
         id: 18,
         name: 'Tôi nghĩ',
-        link: "toi-nghi",
+        link: "/toi-nghi",
         rssLink: "https://tienphong.vn/rss/toi-nghi-273.rss",
 
         dropdown: [

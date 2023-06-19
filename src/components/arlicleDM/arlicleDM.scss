@@ -1,10 +1,11 @@
 @import "../../App";
 .articleDM{
-  padding: 0 00px;
+  //padding: 0 00px;
   margin-top: 20px;
+  margin-left: 23px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
+  //grid-gap: 0px;
 
 }
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./speed.css"
 
 const TextToSpeech = ({ text }) => {
     const [isPaused, setIsPaused] = useState(false);
@@ -81,7 +82,8 @@ const TextToSpeech = ({ text }) => {
 
     return (
         <div>
-            <label>
+            <div className="Voice">
+            <label className="layble">
                 Voice:
                 <select value={voice?.name} onChange={handleVoiceChange}>
                     {window.speechSynthesis.getVoices().map((voice) => (
@@ -93,6 +95,8 @@ const TextToSpeech = ({ text }) => {
             </label>
 
             <br />
+            </div>
+            <div className="condition">
 
             <label>
                 Pitch:
@@ -133,10 +137,12 @@ const TextToSpeech = ({ text }) => {
             </label>
 
             <br />
-
-            <button onClick={handlePlay}>{isPaused ? "Resume" : "Play"}</button>
-            <button onClick={handlePause}>Pause</button>
-            <button onClick={handleStop}>Stop</button>
+            </div>
+            <div className="buttonVoi">
+            <button onClick={handlePlay} className="play">{isPaused ? "Resume" : "Play"}</button>
+            <button onClick={handlePause} className="pause">Pause</button>
+            <button onClick={handleStop} className="stop">Stop</button>
+            </div>
         </div>
     );
 };

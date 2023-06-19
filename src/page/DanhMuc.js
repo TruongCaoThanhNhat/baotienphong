@@ -4,6 +4,7 @@ import Header from '../layout/header/Header';
 import Navigation from '../layout/navigation/Navigation';
 import AarticleDm from '../components/arlicleDM/AarticleDm';
 import FormSearch from "../components/FormSearch";
+import "./detail.css"
 
 
 
@@ -55,13 +56,13 @@ const DanhMuc = ({ rssLink, title }) => {
         <div>
             <Header></Header>
             <Navigation></Navigation>
-            <h2>{title}</h2>
+            <h3 className="tieude" >{title}</h3>
             <FormSearch onSearch={handleSearch} />
 
             <div className="articleDM">
                 {filteredData.map((item, index) => (
                     <div key={index}>
-                        <AarticleDm feeds={item} />
+                        <AarticleDm feed={item} />
                     </div>
                 ))}
             </div>

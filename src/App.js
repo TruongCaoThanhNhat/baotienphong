@@ -20,8 +20,9 @@ function App() {
                     <Route path="/" element={<HomePage></HomePage>} />
                     <Route path="/history" element={<HistoryPage></HistoryPage>} />
                     <Route path="/:slug" element={<DetailPage></DetailPage>} />
-                    <Route path="/chitiet" element={<DetailPage></DetailPage>} />
-                    <Route path="/danhmuc" element={<DanhMuc></DanhMuc>} />
+                    {/*<Route path="/chitiet" element={<DetailPage></DetailPage>} />*/}
+                    {/*<Route path="/danhmuc" element={<DanhMuc></DanhMuc>} />*/}
+
                     {route.map((item, index) => (
                         <Route path={item.link} element={<DanhMuc rssLink={item.rssLink} title={item.name}></DanhMuc>} />
                     ))}

@@ -7,6 +7,7 @@ import {useParams} from 'react-router-dom';
 
 import "./detail.css"
 import TextToSpeech from '../util/TextToSpeech';
+import TextToSpeechWrapper from "../util/TextToSpeechWrapper";
 
 
 const DetailPage = () => {
@@ -21,6 +22,7 @@ const DetailPage = () => {
         title: '',
         sapo: '',
         body: '',
+        bodys: '',
         tag: '',
         // more:'',
         // mgbox:'',
@@ -58,6 +60,7 @@ const DetailPage = () => {
                     title: text.title,
                     sapo: text.sapo,
                     body: text.body,
+                    bodys: text.bodys,
                     tag: text.tag,
                     // more: text.more,
                     // mgbox: text.mgbox,
@@ -73,10 +76,13 @@ const DetailPage = () => {
 
     return (
         <div>
+
             <Header></Header>
             <Navigation></Navigation>
 
-            <TextToSpeech text={content.body} />
+            <TextToSpeech text={content.bodys } />
+            {/*<TextToSpeechWrapper html={content.body} />/*/}
+
 
             <div className={"article__title cms-title"}>{content.title}</div>
             <div className={"article__sapo cms-desc"}>{content.sapo}</div>
@@ -97,10 +103,10 @@ const DetailPage = () => {
                 {/* Form nhập bình luận */}
                 <form onSubmit={submitComment}>
                     <label className={"name"} htmlFor="name">Tên của bạn:</label>
-                    <input type="text" id="name" name="name"/><br/>
+                    <input className={"text-name"} type="text" id="name" name="name"/><br/>
 
                     <label className={"comments"} htmlFor="comment">Bình luận:</label>
-                    <textarea id="comment" name="comment"></textarea><br/>
+                    <textarea className={"text"} id="comment" name="comment"></textarea><br/>
 
                     <button className="button" type="submit">Gửi bình luận</button>
                 </form>

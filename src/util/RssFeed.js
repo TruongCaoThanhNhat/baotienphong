@@ -46,6 +46,7 @@ const getRssFeedDetail = async (url, callback) => {
         const title = doc.querySelector('title').innerText;
         const sapo = doc.querySelector('div.article__sapo').textContent;
         const body = doc.querySelector('div.article__body').innerHTML;
+        const bodys = doc.querySelector('div.article__body').textContent;
         const tag = doc.querySelector('div.article__tag').innerHTML;
         // const more = doc.querySelector('div.more-story-3').innerHTML;
         // const mgbox = doc.querySelector('div.mgbox').innerHTML;
@@ -64,8 +65,8 @@ const getRssFeedDetail = async (url, callback) => {
 
 
         const more = doc.querySelector('div.recommend-news').textContent;
-        callback({ title, sapo, body, tag, more });
-        callback({ title, sapo, body, tag });
+        callback({ title, sapo, body,bodys, tag, more });
+        callback({ title, sapo, body,bodys, tag });
 
         // const more = doc.querySelector('div.more-story-3').innerHTML;
         //
@@ -73,7 +74,7 @@ const getRssFeedDetail = async (url, callback) => {
         // callback({ title, sapo, body,tag, more, comment });
         //
 
-        callback({ title, sapo, body, tag });
+        callback({ title, sapo, body,bodys, tag });
 
 
         // const more = doc.querySelector('div.more-story-3').innerHTML;
